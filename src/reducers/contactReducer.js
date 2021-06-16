@@ -7,6 +7,13 @@ const initialContacts={ contacts:[
 
 const contactReducer=(state=initialContacts, action)=>{
     switch(action.type){
+        case "ADD_CONTACT":
+            console.log(action.payload)
+            return{...state, contacts:[...state.contacts, action.payload]};
+        case "EDIT_CONTACT":
+            let EditId= action.payload.id
+            let updatedContacts= state.contacts.map((contact)=> contact.id===EditId? action.payload:contact)
+            return{contacts:updatedContacts}
         default:
             return state;
     }

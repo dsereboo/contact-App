@@ -4,7 +4,8 @@ import {Container, Row, Col} from "react-bootstrap"
 import AddContact from './components/AddContact';
 import Contacts from './components/Contacts';
 
-function App() {
+function App(props) {
+
   return (
     <Container>
       <Row>

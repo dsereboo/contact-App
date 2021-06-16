@@ -21,9 +21,9 @@ const Contact=(props)=>{
             <Card.Subtitle className="mb-2 text-muted">Contact</Card.Subtitle>
             <Card.Title>{props.contactInfo.id}</Card.Title>
             <Card.Text>
-              <p>Name:{props.contactInfo.name} </p>
-              <p>Phone Number:{props.contactInfo.telephone} </p>
-              <p>Location:{props.contactInfo.location}</p>
+              <p>Name: {props.contactInfo.name} </p>
+              <p>Phone Number: {props.contactInfo.telephone} </p>
+              <p>Location: {props.contactInfo.location}</p>
             </Card.Text>
             <Card.Link href="#">
               <Button size="sm" variant="primary" onClick={handleShow}>

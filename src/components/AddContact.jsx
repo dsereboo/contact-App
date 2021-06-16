@@ -1,13 +1,16 @@
 import React,{useState} from "react"
 import { Form,Button } from "react-bootstrap"
+import {connect} from "react-redux"
+import { addContact } from "../actions/userActions"
 
 
-const AddContact=()=>{
+
+const AddContact=(props)=>{
 
     const [contact,setContact]=useState({
         name:"", telephone:"", address:"", id:"",
     })
-
+    
     const handleChange=(event)=>{
         setContact({...contact, [event.target.name]:event.target.value})
     }
@@ -15,7 +18,9 @@ const AddContact=()=>{
     const handleSubmit=(event)=>{
         event.preventDefault()
         contact.id=Math.floor(Math.random()*100).toString()
+        props.addNewContact(contact)
     }
+    
     return(
         <Form onSubmit={handleSubmit}>
             <Form.Group>
@@ -35,4 +40,6 @@ const AddContact=()=>{
 
     )
 }
-export default AddContact
+
+const mapDispatchToProps={addNewContact: addContact} 
+export default connect(null, mapDispatchToProps)(AddContact)
