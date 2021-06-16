@@ -22,7 +22,7 @@ const Contact=(props)=>{
           </Modal.Header>
           <Modal.Body><EditContact contactData={props.contactInfo} handleClose={handleClose}/></Modal.Body>
         </Modal>
-        <Card>
+        <Card >
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">Contact</Card.Subtitle>
             <Card.Title>{props.contactInfo.id}</Card.Title>
@@ -31,7 +31,7 @@ const Contact=(props)=>{
               <p>Phone Number: {props.contactInfo.telephone} </p>
               <p>Location: {props.contactInfo.location}</p>
             </Card.Text>
-            <Card.Link href="#">
+            <Card.Link href="#" >
               <Button size="sm" variant="primary" onClick={handleShow}>
                 Edit
               </Button>
