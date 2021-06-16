@@ -35,7 +35,7 @@ const AddContact=(props)=>{
                 <Form.Label>Location</Form.Label>
                 <Form.Control onChange={handleChange} type="text" name="location" placeholder="Enter your address"/>
             </Form.Group>
-            <Button variant="primary" size="block" type="submit">Add Contact</Button>
+            <Button variant="primary" size="md" type="submit" block>Add Contact</Button>
         </Form>
 
     )

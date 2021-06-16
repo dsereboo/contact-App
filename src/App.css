@@ -5,3 +5,9 @@ body{
 .card{
   margin-bottom: 3rem;
 }
+
+
+.no-flex.row{
+  display:block;
+  margin-bottom: 2rem;
+}

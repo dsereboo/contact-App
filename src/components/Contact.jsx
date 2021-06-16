@@ -20,7 +20,7 @@ const Contact=(props)=>{
           <Modal.Header closeButton>
             <Modal.Title>Edit Contact</Modal.Title>
           </Modal.Header>
-          <Modal.Body><EditContact contactData={props.contactInfo}/></Modal.Body>
+          <Modal.Body><EditContact contactData={props.contactInfo} handleClose={handleClose}/></Modal.Body>
         </Modal>
         <Card>
           <Card.Body>
