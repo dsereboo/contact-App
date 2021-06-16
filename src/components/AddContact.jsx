@@ -5,7 +5,7 @@ import { Form,Button } from "react-bootstrap"
 const AddContact=()=>{
 
     const [contact,setContact]=useState({
-        name:"", phoneNum:"", address:"", id:"",
+        name:"", telephone:"", address:"", id:"",
     })
 
     const handleChange=(event)=>{
@@ -24,7 +24,7 @@ const AddContact=()=>{
             </Form.Group>
             <Form.Group>
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control onChange={handleChange} type="text" name="phoneNum" placeholder="Eg. 0205478909"/>
+                <Form.Control onChange={handleChange} type="text" name="telephone" placeholder="Eg. 0205478909"/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Location</Form.Label>
