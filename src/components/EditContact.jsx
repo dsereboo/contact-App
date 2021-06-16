@@ -1,9 +1,16 @@
 import React,{useState} from "react"
 import {Form,Button} from "react-bootstrap"
+import {connect} from "react-redux"
+import { editContact } from "../actions/userActions"
 
-const EditContact=()=>{
+const EditContact=(props)=>{
 
-    const [contact,editContact]=useState()
+    const [contact,editContact]=useState({
+        id:props.contactData.id,
+        name: props.contactData.name,
+        telephone: props.contactData.telephone,
+      
+    })
 
     const handleChange=(event)=>{
         editContact({...contact, [event.target.name]: event.target.value})
@@ -11,6 +18,7 @@ const EditContact=()=>{
 
     const handleSubmit=(event)=>{
         event.preventDefault()
+        props.editContact(contact)
     }
 
     return(
@@ -32,4 +40,5 @@ const EditContact=()=>{
     )
 }
 
-export default EditContact
+const mapDispatchToProps={editContact:editContact}
+export default connect(null,mapDispatchToProps)(EditContact)

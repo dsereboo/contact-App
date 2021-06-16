@@ -5,7 +5,6 @@ import AddContact from './components/AddContact';
 import Contacts from './components/Contacts';
 
 function App(props) {
-
   return (
     <Container>
       <Row>
@@ -16,7 +15,7 @@ function App(props) {
           <AddContact/>
         </Col>
         <Col>
-          <Contacts/>
+          <Contacts ed/>
         </Col>
       </Row>
     </Container>

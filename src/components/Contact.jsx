@@ -1,6 +1,8 @@
 import React,{useState}from "react"
 import {Card,Button,Col,Modal} from "react-bootstrap"
 import EditContact from "./EditContact";
+import { deleteContact } from "../actions/userActions";
+import {connect} from "react-redux"
 
 const Contact=(props)=>{
     //State and methods to hide/show modal
@@ -8,13 +10,17 @@ const Contact=(props)=>{
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const handleDelete=()=>{
+        props.deleteContact(props.contactInfo.id)
+    }
+
     return (
       <Col md="5">
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Contact</Modal.Title>
           </Modal.Header>
-          <Modal.Body><EditContact/></Modal.Body>
+          <Modal.Body><EditContact contactData={props.contactInfo}/></Modal.Body>
         </Modal>
         <Card>
           <Card.Body>
@@ -31,7 +37,7 @@ const Contact=(props)=>{
               </Button>
             </Card.Link>
             <Card.Link href="#">
-              <Button size="sm" variant="danger">
+              <Button size="sm" variant="danger" onClick={handleDelete}>
                 Delete
               </Button>
             </Card.Link>
@@ -40,4 +46,6 @@ const Contact=(props)=>{
       </Col>
     );
 }
-export default Contact
+
+const mapDispatchToProps={deleteContact:deleteContact}
+export default connect(null,mapDispatchToProps)(Contact)
