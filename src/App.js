@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Container, Row, Col} from "react-bootstrap"
+import AddContact from './components/AddContact';
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
         <h1>Contact APP</h1>
       </Row>
       <Row>
-        <Col md={4}>
-          <p>User form</p>
+        <Col md="4">
+          <AddContact/>
         </Col>
         <Col>
           <p>Users on display</p>
