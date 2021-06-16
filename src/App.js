@@ -1,4 +1,4 @@
-import {Container, Row, Col,Button,Modal} from "react-bootstrap"
+import {Container, Row,Button,Modal} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AddContact from './components/AddContact';
