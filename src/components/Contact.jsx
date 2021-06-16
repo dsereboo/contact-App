@@ -15,7 +15,7 @@ const Contact=(props)=>{
     }
 
     return (
-      <Col md="5">
+      <Col md="3">
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Contact</Modal.Title>

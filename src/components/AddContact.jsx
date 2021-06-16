@@ -19,6 +19,7 @@ const AddContact=(props)=>{
         event.preventDefault()
         contact.id=Math.floor(Math.random()*100).toString()
         props.addNewContact(contact)
+        props.handleClose()
     }
     
     return(
@@ -35,7 +36,7 @@ const AddContact=(props)=>{
                 <Form.Label>Location</Form.Label>
                 <Form.Control onChange={handleChange} type="text" name="location" placeholder="Enter your address"/>
             </Form.Group>
-            <Button variant="primary" size="md" type="submit" block>Add Contact</Button>
+            <Button variant="primary" size="" type="submit" block>Add Contact</Button>
         </Form>
 
     )

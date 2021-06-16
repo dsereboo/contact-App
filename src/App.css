@@ -11,3 +11,16 @@ body{
   display:block;
   margin-bottom: 2rem;
 }
+
+.btn-float.btn.btn-primary.btn-lg{
+  position:fixed;
+  width:60px;
+	height:60px;
+	bottom:40px;
+	right:90px;
+  border-radius: 50%;
+}
+
+.btn-group-lg>.btn, .btn-lg{
+  font-size: 0.9rem;
+}
