@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import {Form} from "react-bootstrap"
+import {Form,Button} from "react-bootstrap"
 
 const EditContact=()=>{
 
@@ -27,6 +27,7 @@ const EditContact=()=>{
                 <Form.Label>Location</Form.Label>
                 <Form.Control onChange={handleChange} name="location"/>
             </Form.Group>
+            <Button type="submit">Submit</Button>
         </Form>
     )
 }

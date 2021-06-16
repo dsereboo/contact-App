@@ -1,7 +1,8 @@
 import React,{useState}from "react"
 import {Card,Button,Col,Modal} from "react-bootstrap"
+import EditContact from "./EditContact";
 
-const Contact=()=>{
+const Contact=(props)=>{
     //State and methods to hide/show modal
     const[show,setShow]=useState(false)
     const handleClose = () => setShow(false);
@@ -13,16 +14,16 @@ const Contact=()=>{
           <Modal.Header closeButton>
             <Modal.Title>Edit Contact</Modal.Title>
           </Modal.Header>
-          <Modal.Body></Modal.Body>
+          <Modal.Body><EditContact/></Modal.Body>
         </Modal>
         <Card>
           <Card.Body>
             <Card.Subtitle className="mb-2 text-muted">Contact</Card.Subtitle>
-            <Card.Title></Card.Title>
+            <Card.Title>{props.contactInfo.id}</Card.Title>
             <Card.Text>
-              <p>Name: </p>
-              <p>Phone Number: </p>
-              <p>Address:</p>
+              <p>Name:{props.contactInfo.name} </p>
+              <p>Phone Number:{props.contactInfo.telephone} </p>
+              <p>Location:{props.contactInfo.location}</p>
             </Card.Text>
             <Card.Link href="#">
               <Button size="sm" variant="primary" onClick={handleShow}>
