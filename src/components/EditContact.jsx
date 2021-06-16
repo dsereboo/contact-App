@@ -9,7 +9,7 @@ const EditContact=(props)=>{
         id:props.contactData.id,
         name: props.contactData.name,
         telephone: props.contactData.telephone,
-      
+        location:props.contactData.location,
     })
 
     const handleChange=(event)=>{
@@ -19,21 +19,22 @@ const EditContact=(props)=>{
     const handleSubmit=(event)=>{
         event.preventDefault()
         props.editContact(contact)
+        props.handleClose()
     }
 
     return(
         <Form onSubmit={handleSubmit}>
             <Form.Group>
                 <Form.Label>Name</Form.Label>
-                <Form.Control onChange={handleChange} name="name" />
+                <Form.Control onChange={handleChange} name="name"  value={contact.name}/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control onChange={handleChange} name="telephone"/>
+                <Form.Control onChange={handleChange} name="telephone" value={contact.telephone}/>
             </Form.Group>
             <Form.Group> 
                 <Form.Label>Location</Form.Label>
-                <Form.Control onChange={handleChange} name="location"/>
+                <Form.Control onChange={handleChange} name="location" value={contact.location}/>
             </Form.Group>
             <Button type="submit">Submit</Button>
         </Form>
