@@ -17,7 +17,7 @@ function App(props) {
     <Container>
       <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Edit Contact</Modal.Title>
+              <Modal.Title>Add Contact</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <AddContact handleClose={handleClose} />

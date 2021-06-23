@@ -17,7 +17,7 @@ body{
   width:60px;
 	height:60px;
 	bottom:40px;
-	right:90px;
+	right:10rem;
   border-radius: 50%;
   box-shadow: 2px 2px 3px rgb(156, 156, 156);
 }
@@ -25,3 +25,4 @@ body{
 .btn-group-lg>.btn, .btn-lg{
   font-size: 0.9rem;
 }
+

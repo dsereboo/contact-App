@@ -1,14 +1,14 @@
 import React,{useState} from "react"
 import { Form,Button } from "react-bootstrap"
 import {connect} from "react-redux"
-import { addContact } from "../actions/userActions"
+import {addContact} from "../actions/userActions"
 
 
 
 const AddContact=(props)=>{
 
     const [contact,setContact]=useState({
-        name:"", telephone:"", address:"", id:"",
+        name:"", telephone:"", location:"", id:"",
     })
     
     const handleChange=(event)=>{
@@ -18,7 +18,7 @@ const AddContact=(props)=>{
     const handleSubmit=(event)=>{
         event.preventDefault()
         contact.id=Math.floor(Math.random()*100).toString()
-        props.addNewContact(contact)
+        props.addContact(contact)
         props.handleClose()
     }
     
@@ -42,5 +42,5 @@ const AddContact=(props)=>{
     )
 }
 
-const mapDispatchToProps={addNewContact: addContact} 
-export default connect(null, mapDispatchToProps)(AddContact)
+//const mapDispatchToProps={addNewContact: addContact} 
+export default connect(null, {addContact})(AddContact)
