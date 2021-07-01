@@ -14,11 +14,12 @@ const EditContact=(props)=>{
 
     const handleChange=(event)=>{
         editContact({...contact, [event.target.name]: event.target.value})
+        
     }
 
     const handleSubmit=(event)=>{
         event.preventDefault()
-        props.editContact(contact)
+        props.editContact(contact,contact.id)
         props.handleClose()
     }
 
@@ -41,5 +42,5 @@ const EditContact=(props)=>{
     )
 }
 
-const mapDispatchToProps={editContact:editContact}
+const mapDispatchToProps={editContact}
 export default connect(null,mapDispatchToProps)(EditContact)

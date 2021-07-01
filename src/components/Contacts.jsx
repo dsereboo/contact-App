@@ -1,9 +1,17 @@
-import React from "react"
+import React,{ useEffect } from "react"
 import Contact from "./Contact"
 import {Container, Row} from "react-bootstrap"
 import {connect} from "react-redux"
+import {getContacts} from "../actions/userActions"
 
 const Contacts=(props)=>{
+
+    useEffect(
+        ()=>{
+            props.getContacts()
+        }, []
+    )
+    console.log(props.contacts)
     return(
         <Container>
             <Row>
@@ -17,8 +25,13 @@ const Contacts=(props)=>{
 
 const mapStateToProps=(state)=>{
     return{
-        contacts: state.contacts,
+        contacts: state.contacts.contacts,
     }
 }
 
-export default connect(mapStateToProps, {})(Contacts)
+
+const mapDispatchToProps={
+    getContacts,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contacts)

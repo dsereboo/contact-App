@@ -5,10 +5,6 @@ import { getFirestore, reduxFirestore } from "redux-firestore"
 import thunk from "redux-thunk"
 import firebase from "../config"
 
-const initialState={
-    contacts:[],
-}
-
 const combinedReducers=combineReducers(
     {
         contacts: contactReducer,
@@ -18,7 +14,6 @@ const combinedReducers=combineReducers(
 
 export const store= createStore(
     combinedReducers,
-    initialState,
     compose(
     
         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
